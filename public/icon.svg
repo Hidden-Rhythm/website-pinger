@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none">
+  <defs>
+    <linearGradient id="pulse-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06B6D4" />
+      <stop offset="100%" stop-color="#22C55E" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="0.6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+  <!-- OLED Black Rounded Background -->
+  <rect width="32" height="32" rx="7" fill="#000000" />
+  <rect width="32" height="32" rx="7" stroke="rgba(255, 255, 255, 0.14)" stroke-width="1" />
+  
+  <!-- Subtle Radar Ring -->
+  <circle cx="16" cy="16" r="10" stroke="rgba(6, 182, 212, 0.15)" stroke-width="0.75" />
+  
+  <!-- Pulse Waveform Path -->
+  <path
+    d="M 4 16 L 9 16 L 12 11 L 15 22 L 19 8 L 22 18 L 24 16 L 27 16"
+    stroke="url(#pulse-grad)"
+    stroke-width="2.2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    filter="url(#glow)"
+  />
+
+  <!-- Active Telemetry Dot -->
+  <circle cx="27" cy="16" r="1.5" fill="#22C55E" />
+</svg>
